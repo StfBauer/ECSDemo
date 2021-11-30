@@ -1,6 +1,14 @@
-@mixin gridBase() {
+@function px2rem($pxValue: 16px){
+
+	$out: ( $pxValue / 16px) * 1rem;
+	
+	@return $out;
+
+}
+
+@mixin gridBase($columns: 12) {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
     margin: auto px2rem(8px);
 
     /* > 1366 pixel */

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './Cards.module.scss';
+import styles from '../EcsDemo1.module.scss';
 export interface ICardProps {
     img?: string;
     title?: string;

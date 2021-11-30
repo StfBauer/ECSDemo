@@ -1,4 +1,5 @@
-@use 'Cards/Cards.module';
+@use 'grid.mixin' as gridTool;
+@import 'Cards/cards';
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 
 .ecsDemo1 {
@@ -13,6 +14,7 @@
     @include ms-fontColor-white;
     background-color: $ms-color-themeDark;
     padding: 20px;
+
   }
 
   .column {
@@ -72,21 +74,32 @@
       display: inline-block;
     }
   }
-}
 
+}
 
 :global {
   .mainContent {
     :local{
       .ecsDemo1{
-        background-color: lime;
+        @include gridTool.gridBase();
+        // background-color: lime;
+        &>div{
+          @include gridTool.gridSpan(2);
+        }
       }
     }
   }
-  .CanvasSection-sm12{
+  .CanvasSection-xl12{
     :local{
       .ecsDemo1{
-        background-color: yellow;
+        // background-color: yellow;
+      }
+    }
+  }
+  .CanvasSection-xl6{
+    :local{
+      .ecsDemo1{
+        background-color: pink;
       }
     }
   }
